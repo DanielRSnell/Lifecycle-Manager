@@ -1,75 +1,129 @@
 (function($) {
     'use strict';
 
-    let orderId = null;
+    const WooLifecycleManager = {
+        orderId: null,
+        ajaxUrl: wlm_ajax.ajax_url,
+        nonce: wlm_ajax.nonce,
+
+        init: function() {
+            if (this.isOrderPage()) {
+                this.orderId = this.getOrderIdFromUrl();
+                if (this.orderId) {
+                    this.setupEventListeners();
+                    this.initialFetch();
+                }
+            }
+        },
+
+        isOrderPage: function() {
+            return window.location.href.includes('wc-orders');
+        },
+
+        getOrderIdFromUrl: function() {
+            return new URLSearchParams(window.location.search).get('id');
+        },
+
+        setupEventListeners: function() {
+            const orderStatus = $('#order_status');
+            if (orderStatus.length) {
+                orderStatus.on('change', this.handleStatusChange.bind(this));
+            }
+        },
+
+        initialFetch: function() {
+            const orderStatus = $('#order_status');
+            if (orderStatus.length) {
+                this.fetchLifecyclePartial('container', orderStatus.val());
+            }
+        },
+
+        handleStatusChange: function(event) {
+            this.updateLifecycleStatus($(event.target).val());
+        },
+
+        fetchLifecyclePartial: function(partial, status) {
+            $.ajax({
+                url: this.ajaxUrl,
+                method: 'POST',
+                data: { 
+                    action: 'get_lifecycle_partial',
+                    partial: partial,
+                    status: status,
+                    order_id: this.orderId,
+                    nonce: this.nonce
+                },
+                success: this.handleFetchSuccess.bind(this),
+                error: this.handleAjaxError.bind(this)
+            });
+        },
+
+        updateLifecycleStatus: function(status) {
+            $.ajax({
+                url: this.ajaxUrl,
+                method: 'POST',
+                data: { 
+                    action: 'update_lifecycle_status',
+                    status: status,
+                    order_id: this.orderId,
+                    nonce: this.nonce
+                },
+                success: this.handleUpdateSuccess.bind(this),
+                error: this.handleAjaxError.bind(this)
+            });
+        },
+
+        handleFetchSuccess: function(response) {
+            if (response.success) {
+                this.updateDom(response.data);
+            } else {
+                this.handleError('Error fetching lifecycle partial: ' + response.data);
+            }
+        },
+
+        handleUpdateSuccess: function(response) {
+            if (response.success) {
+                this.updateDom(response.data);
+            } else {
+                this.handleError('Error updating lifecycle status: ' + response.data);
+            }
+        },
+
+        updateDom: function(html) {
+            let $container = $('#lifecycle-container');
+            if (!$container.length) {
+                $('#order_data').after('<div id="lifecycle-container"></div>');
+                $container = $('#lifecycle-container');
+            }
+            $container.html(html);
+            this.refreshOrderState();
+        },
+
+        refreshOrderState: function() {
+            const stateScript = document.getElementById('lifecycle-order-state');
+            if (stateScript) {
+                try {
+                    const state = JSON.parse(stateScript.textContent);
+                    console.log('Order state refreshed:', state);
+                } catch (error) {
+                    this.handleError('Error parsing order state: ' + error.message);
+                }
+            }
+        },
+
+        handleAjaxError: function(xhr, status, error) {
+            this.handleError('AJAX error: ' + error);
+        },
+
+        handleError: function(message) {
+            console.error(message);
+        }
+    };
 
     $(document).ready(function() {
-        if (window.location.href.includes('wc-orders')) {
-            orderId = new URLSearchParams(window.location.search).get('id');
-            
-            if (orderId) {
-                const orderData = document.getElementById('order_data');
-                if (orderData) {
-                    const orderStatus = $('#order_status');
-                    if (orderStatus.length) {
-                        fetchLifecyclePartial('container', orderStatus.val());
-                        orderStatus.on('change', function() {
-                            updateLifecycleStatus($(this).val());
-                        });
-                    }
-                }
-            }
-        }
+        WooLifecycleManager.init();
     });
 
-    function fetchLifecyclePartial(partial, status) {
-        $.ajax({
-            url: wlm_ajax.ajax_url,
-            method: 'POST',
-            data: { 
-                action: 'get_lifecycle_partial',
-                partial: partial,
-                status: status,
-                order_id: orderId,
-                nonce: wlm_ajax.nonce
-            },
-            success: function(response) {
-                if (response.success) {
-                    $('#lifecycle-container').remove();
-                    $('#order_data').after(response.data);
-                } else {
-                    console.error('Error fetching lifecycle partial:', response.data);
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching lifecycle partial:', error);
-            }
-        });
-    }
+    window.WooLifecycleManager = WooLifecycleManager;
 
-    function updateLifecycleStatus(status) {
-        $.ajax({
-            url: wlm_ajax.ajax_url,
-            method: 'POST',
-            data: { 
-                action: 'update_lifecycle_status',
-                status: status,
-                order_id: orderId,
-                nonce: wlm_ajax.nonce
-            },
-            success: function(response) {
-                if (response.success) {
-                    $('#lifecycle-container').replaceWith(response.data);
-                } else {
-                    console.error('Error updating lifecycle status:', response.data);
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error('Error updating lifecycle status:', error);
-            }
-        });
-    }
-
-    // Expose the fetchLifecyclePartial function globally
-    window.fetchLifecyclePartial = fetchLifecyclePartial;
 })(jQuery);
