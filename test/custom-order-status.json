@@ -1,0 +1,40 @@
+{
+  "custom_statuses": [
+    {
+      "name": "Shipped (PO Payment)",
+      "slug": "shipped-po-payment"
+    },
+    {
+      "name": "Packing/QA",
+      "slug": "packing-qa"
+    },
+    {
+      "name": "Pickup (Label + Carrier)",
+      "slug": "pickup-label-carrier"
+    },
+    {
+      "name": "Shipped (Incomplete Order)",
+      "slug": "shipped-incomplete-order"
+    },
+    {
+      "name": "Build/Pick (On Hold)",
+      "slug": "build-pick-on-hold"
+    },
+    {
+      "name": "Build/Pick",
+      "slug": "build-pick"
+    },
+    {
+      "name": "Processing (PO Payment)",
+      "slug": "processing-po-payment"
+    },
+    {
+      "name": "Powder Coat",
+      "slug": "powder-coat"
+    },
+    {
+      "name": "Pickup (Local)",
+      "slug": "pickup-local"
+    }
+  ]
+}

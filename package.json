@@ -1,0 +1,13 @@
+{
+  "name": "woo-lifecycle-manager",
+  "version": "1.0.0",
+  "description": "Woo Lifecycle Manager with Tailwind CSS",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./admin/css/woo-lifecycle-manager-admin.css",
+    "watch:css": "npx @tailwindcss/cli -i ./src/input.css -o ./admin/css/woo-lifecycle-manager-admin.css --watch"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}

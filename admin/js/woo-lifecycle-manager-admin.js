@@ -24,7 +24,7 @@
 
     function fetchLifecyclePartial(partial, status) {
         $.ajax({
-            url: ajaxurl,
+            url: wlm_ajax.ajax_url,
             method: 'POST',
             data: { 
                 action: 'get_lifecycle_partial',
@@ -49,7 +49,7 @@
 
     function updateLifecycleStatus(status) {
         $.ajax({
-            url: ajaxurl,
+            url: wlm_ajax.ajax_url,
             method: 'POST',
             data: { 
                 action: 'update_lifecycle_status',
