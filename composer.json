@@ -1,0 +1,17 @@
+{
+    "name": "danielsnell/lifecycle",
+    "description": "Woocommerce Lifecycle Manager for Orders",
+    "require": {
+        "timber/timber": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Danielsnell\\Lifecycle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "artisan"
+        }
+    ]
+}

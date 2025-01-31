@@ -1,0 +1,9 @@
+<div id="lifecycle-container" class="lc-container lc-pending" data-nonce="{{ nonce }}">
+    <div class="lc-status">Pending</div>
+    <div class="lc-order-id">Order ID: {{ order_id }}</div>
+    <div class="lc-message">Your order is pending. We'll process it soon!</div>
+    <div class="lc-details">
+        <p>Customer: {{ order.get_formatted_billing_full_name() }}</p>
+        <p>Total: {{ order.get_formatted_order_total() }}</p>
+    </div>
+</div>
