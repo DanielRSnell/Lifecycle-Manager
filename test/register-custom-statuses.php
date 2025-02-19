@@ -13,7 +13,7 @@ function wlm_register_custom_order_statuses() {
 
         if (is_array($custom_statuses) && isset($custom_statuses['custom_statuses'])) {
             foreach ($custom_statuses['custom_statuses'] as $status) {
-                register_post_status('wc-' . $status['slug'], array(
+                register_post_status($status['id'], array(
                     'label' => $status['name'],
                     'public' => true,
                     'exclude_from_search' => false,
@@ -35,7 +35,7 @@ function wlm_add_custom_statuses_to_order_statuses($order_statuses) {
 
         if (is_array($custom_statuses) && isset($custom_statuses['custom_statuses'])) {
             foreach ($custom_statuses['custom_statuses'] as $status) {
-                $order_statuses['wc-' . $status['slug']] = $status['name'];
+                $order_statuses[$status['id']] = $status['name'];
             }
         }
     }

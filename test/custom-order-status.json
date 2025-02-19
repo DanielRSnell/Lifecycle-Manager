@@ -1,40 +1,56 @@
 {
   "custom_statuses": [
     {
-      "name": "Shipped (PO Payment)",
-      "slug": "shipped-po-payment"
+      "id": "wc-delivered",
+      "name": "Delivered"
     },
     {
-      "name": "Packing/QA",
-      "slug": "packing-qa"
+      "id": "wc-partial-shipped",
+      "name": "Partially Shipped"
     },
     {
-      "name": "Pickup (Label + Carrier)",
-      "slug": "pickup-label-carrier"
+      "id": "wc-shipped-po",
+      "name": "Shipped (PO Payment)"
     },
     {
-      "name": "Shipped (Incomplete Order)",
-      "slug": "shipped-incomplete-order"
+      "id": "wc-make-ready",
+      "name": "Packing/QA"
     },
     {
-      "name": "Build/Pick (On Hold)",
-      "slug": "build-pick-on-hold"
+      "id": "wc-shipping-order",
+      "name": "Pickup (Label + Carrier)"
     },
     {
-      "name": "Build/Pick",
-      "slug": "build-pick"
+      "id": "wc-shipped-partial",
+      "name": "Shipped (Incomplete Order)"
     },
     {
-      "name": "Processing (PO Payment)",
-      "slug": "processing-po-payment"
+      "id": "wc-on-hold-awaiting",
+      "name": "Build/Pick (On Hold)"
     },
     {
-      "name": "Powder Coat",
-      "slug": "powder-coat"
+      "id": "wc-build-pick",
+      "name": "Build/Pick"
     },
     {
-      "name": "Pickup (Local)",
-      "slug": "pickup-local"
+      "id": "wc-process",
+      "name": "Processing (PO Payment)"
+    },
+    {
+      "id": "wc-powder-coat",
+      "name": "Powder Coat"
+    },
+    {
+      "id": "wc-pickup-local",
+      "name": "Pickup (Local)"
+    },
+    {
+      "id": "wc-checkout-draft",
+      "name": "Draft"
+    },
+    {
+      "id": "wc-wfocu-pri-order",
+      "name": "Primary Order Accepted"
     }
   ]
 }
