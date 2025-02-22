@@ -1,0 +1,37 @@
+.acf-repeater {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.acf-repeater .acf-table {
+  border: none;
+  background: transparent;
+}
+
+.acf-repeater .acf-row {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.acf-repeater .acf-row-handle {
+  padding: 0.75rem;
+}
+
+.acf-repeater .acf-row-handle.order {
+  background: var(--card-muted) !important;
+  border-right: 1px solid var(--border);
+  cursor: move;
+  color: var(--muted-foreground);
+}
+
+.acf-repeater .acf-row-handle.remove {
+  background: var(--card-muted) !important;
+  border-left: 1px solid var(--border);
+}
+
+.acf-repeater .acf-fields {
+  padding: 1.25rem;
+  background: var(--card);
+}

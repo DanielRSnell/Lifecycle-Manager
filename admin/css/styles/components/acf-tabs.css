@@ -1,0 +1,63 @@
+.acf-tab-wrap {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  padding-top: 1rem !important;
+  margin: 0 0 1.5rem !important;
+}
+
+.acf-tab-wrap.-top {
+  margin: 0 0 1.5rem !important;
+}
+
+.acf-tab-group {
+  border: 0 !important;
+  padding: 0.25rem !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  background: var(--slate-100) !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+.acf-tab-group li {
+  margin: 0 !important;
+}
+
+.acf-tab-wrap.-top {
+  padding-left: 0.8rem !important;
+}
+
+.select2-dropdown--below {
+  padding: 1rem !important;
+}
+.acf-tab-button {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: var(--slate-600) !important;
+  background: transparent !important;
+  border: 0 !important;
+  margin: 0 !important;
+  border-radius: var(--radius-lg) !important;
+  transition: all 0.15s ease !important;
+}
+
+.acf-tab-button:hover {
+  color: var(--slate-900) !important;
+}
+
+.acf-tab-group li.active .acf-tab-button {
+  color: var(--slate-900) !important;
+  background: var(--white) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* Remove default WordPress styling */
+.acf-tab-button:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.acf-tab-group li.active .acf-tab-button:focus {
+  box-shadow: var(--shadow-sm) !important;
+}

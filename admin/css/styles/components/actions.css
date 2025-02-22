@@ -1,0 +1,76 @@
+.acf-actions {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+.acf-actions .acf-button,
+.acf-actions .button,
+.acf-actions .button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.acf-actions .acf-button:hover,
+.acf-actions .button:hover,
+.acf-actions .button-primary:hover {
+  background: var(--primary);
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.acf-actions .acf-button:active,
+.acf-actions .button:active,
+.acf-actions .button-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.acf-actions .acf-button svg,
+.acf-actions .button svg,
+.acf-actions .button-primary svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.acf-actions .acf-button-secondary,
+.acf-actions .button-secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.acf-actions .acf-button-secondary:hover,
+.acf-actions .button-secondary:hover {
+  background: var(--secondary);
+  opacity: 0.9;
+}
+
+.acf-actions .acf-repeater-add-row::before {
+  content: '+';
+  font-size: 1.25rem;
+  line-height: 1;
+  margin-right: 0.25rem;
+}
+
+.acf-actions .clear {
+  display: none;
+}

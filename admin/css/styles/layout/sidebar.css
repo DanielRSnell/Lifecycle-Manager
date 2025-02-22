@@ -1,0 +1,23 @@
+.umbral-editor__sidebar {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+}
+
+.umbral-editor__form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    position: relative;
+}
+
+.umbral-editor__form-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    padding-bottom: calc(1.5rem + 80px);
+}

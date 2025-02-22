@@ -8,7 +8,7 @@
  * Domain Path: /languages
  */
 
-if (!defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
 }
 
@@ -41,7 +41,8 @@ if (file_exists(WLM_PLUGIN_DIR . 'test/register-custom-statuses.php')) {
 }
 
 // Initialize the plugin
-function run_woo_lifecycle_manager() {
+function run_woo_lifecycle_manager()
+{
     $plugin = new Woo_Lifecycle_Manager();
     $plugin->run();
 }
@@ -51,27 +52,32 @@ register_activation_hook(__FILE__, 'wlm_activate');
 register_deactivation_hook(__FILE__, 'wlm_deactivate');
 register_uninstall_hook(__FILE__, 'wlm_uninstall');
 
-function wlm_activate() {
+function wlm_activate()
+{
     // Activation tasks (if any)
 }
 
-function wlm_deactivate() {
+function wlm_deactivate()
+{
     // Deactivation tasks (if any)
 }
 
-function wlm_uninstall() {
+function wlm_uninstall()
+{
     // Uninstall tasks
 }
 
 // Load plugin textdomain
 add_action('plugins_loaded', 'wlm_load_textdomain');
-function wlm_load_textdomain() {
+function wlm_load_textdomain()
+{
     load_plugin_textdomain('woo-lifecycle-manager', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 
 // Add settings link on plugin page
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'wlm_settings_link');
-function wlm_settings_link($links) {
+function wlm_settings_link($links)
+{
     $settings_link = '<a href="admin.php?page=wc-settings&tab=woo-lifecycle-manager">' . __('Settings', 'woo-lifecycle-manager') . '</a>';
     array_unshift($links, $settings_link);
     return $links;
@@ -82,3 +88,5 @@ run_woo_lifecycle_manager();
 
 // Plugin loaded action
 do_action('woo_lifecycle_manager_loaded');
+
+require WLM_PLUGIN_DIR . 'includes/router/orders.php';

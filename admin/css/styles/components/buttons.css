@@ -1,0 +1,58 @@
+.acf-actions {
+    padding: 1rem;
+    background: transparent;
+    text-align: right;
+}
+
+.acf-actions .button-primary,
+.acf-actions .acf-button,
+.acf-actions .button {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: var(--shadow-sm);
+}
+
+.acf-actions .button-primary:hover,
+.acf-actions .acf-button:hover,
+.acf-actions .button:hover {
+    opacity: 0.9;
+}
+
+.acf-form-submit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--card);
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border);
+    text-align: right;
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+}
+
+.acf-form-submit input[type="submit"] {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.acf-form-submit input[type="submit"]:hover {
+    opacity: 0.9;
+}

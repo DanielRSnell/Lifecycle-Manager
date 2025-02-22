@@ -1,0 +1,156 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Base colors */
+    --white: #ffffff;
+    --black: #000000;
+
+    /* Background colors */
+    --background: #0c0d10;
+    --background-subtle: #13151a;
+    --background-muted: #171923;
+    --background-emphasis: #1a1f2e;
+
+    /* Slate palette for dark mode */
+    --slate-50: #13151a;
+    --slate-100: #171923;
+    --slate-200: #1a1f2e;
+    --slate-300: #2d3548;
+    --slate-400: #4a5568;
+    --slate-500: #718096;
+    --slate-600: #a0aec0;
+    --slate-700: #cbd5e0;
+    --slate-800: #e2e8f0;
+    --slate-900: #f7fafc;
+    --slate-950: #ffffff;
+
+    /* Semantic colors */
+    --foreground: var(--slate-900);
+    --foreground-muted: var(--slate-600);
+    --foreground-subtle: var(--slate-400);
+
+    /* UI Element colors */
+    --sidebar-background: var(--background-subtle);
+    --sidebar-border: var(--slate-200);
+    --sidebar-item: var(--slate-600);
+    --sidebar-item-hover: var(--white);
+    --sidebar-item-active: var(--white);
+    --sidebar-icon: var(--slate-400);
+    --sidebar-icon-active: var(--white);
+
+    /* Header/Navigation */
+    --header-background: var(--background-subtle);
+    --header-border: var(--slate-200);
+    --header-item: var(--slate-600);
+    --header-item-hover: var(--white);
+
+    /* Cards and containers */
+    --card: var(--background-subtle);
+    --card-hovered: var(--background-muted);
+    --card-selected: var(--background-emphasis);
+    --card-border: var(--slate-200);
+    --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+    /* Inputs and Forms */
+    --input-background: var(--background-subtle);
+    --input-border: var(--slate-200);
+    --input-placeholder: var(--slate-500);
+    --input-focus-border: var(--slate-300);
+    --input-focus-ring: var(--slate-300);
+
+    /* Buttons */
+    --button-primary-background: var(--white);
+    --button-primary-foreground: var(--background);
+    --button-primary-hover: var(--slate-200);
+    --button-secondary-background: var(--background-muted);
+    --button-secondary-foreground: var(--slate-300);
+    --button-secondary-hover: var(--background-emphasis);
+
+    /* Accents and Status */
+    --accent-primary: #3b82f6;
+    --accent-success: #22c55e;
+    --accent-warning: #f59e0b;
+    --accent-danger: #ef4444;
+    --accent-info: #60a5fa;
+
+    /* Overlays and Modals */
+    --overlay-background: rgba(0, 0, 0, 0.7);
+    --modal-background: var(--background-subtle);
+    --modal-border: var(--slate-200);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+
+    /* Focus and Selection */
+    --ring: var(--slate-300);
+    --ring-offset: var(--background);
+    --focus-ring: 0 0 0 2px var(--ring);
+    --selection-background: var(--slate-300);
+    --selection-foreground: var(--white);
+
+    /* Typography */
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius: 0.5rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-all: all 0.15s ease;
+    --transition-colors: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    --transition-opacity: opacity 0.15s ease;
+    --transition-shadow: box-shadow 0.15s ease;
+    --transition-transform: transform 0.15s ease;
+
+    /* Z-index */
+    --z-0: 0;
+    --z-10: 10;
+    --z-20: 20;
+    --z-30: 30;
+    --z-40: 40;
+    --z-50: 50;
+    --z-auto: auto;
+
+    /* Specific Component Variables */
+    --accordion-background: var(--background-subtle);
+    --accordion-border: var(--slate-200);
+    --accordion-chevron: var(--slate-400);
+    
+    --tabs-background: var(--background-subtle);
+    --tabs-border: var(--slate-200);
+    --tabs-active: var(--white);
+    
+    --tooltip-background: var(--slate-200);
+    --tooltip-foreground: var(--white);
+    
+    --dropdown-background: var(--background-subtle);
+    --dropdown-border: var(--slate-200);
+    --dropdown-shadow: var(--shadow-lg);
+
+    --popover-background: var(--background-subtle);
+    --popover-border: var(--slate-200);
+    --popover-shadow: var(--shadow-lg);
+
+    /* Badge/Tag Variables */
+    --badge-background: var(--background-muted);
+    --badge-foreground: var(--slate-300);
+    --badge-border: var(--slate-200);
+    
+    /* Table Variables */
+    --table-header-background: var(--background-subtle);
+    --table-border: var(--slate-200);
+    --table-row-hover: var(--background-muted);
+    
+    /* Code Block Variables */
+    --code-background: var(--background-muted);
+    --code-foreground: var(--slate-300);
+    --code-border: var(--slate-200);
+  }
+}

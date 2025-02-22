@@ -1,3 +1,7 @@
 <div id="lifecycle-container" class="lc-container" data-nonce="{{ nonce }}">
+    <div class="status-indicator">
+        <span class="status-dot unchanged"></span>
+        <span class="status-text">Unchanged</span>
+    </div>
     <div class="lc-status">{{ order_status|replace({'wc-': '', '-': ' '})|capitalize }}</div>
 </div>

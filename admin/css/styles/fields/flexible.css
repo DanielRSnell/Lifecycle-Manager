@@ -1,0 +1,41 @@
+.acf-flexible-content {
+  margin: 1.5rem 0;
+}
+
+.acf-flexible-content .layout {
+  margin: 1rem 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+}
+
+.acf-flexible-content > .values {
+  padding-bottom: 1rem;
+}
+
+.acf-flexible-content .layout .acf-fc-layout-handle {
+  background: var(--card-muted);
+  padding: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.acf-flexible-content .layout .acf-fc-layout-order {
+  background: var(--card);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}

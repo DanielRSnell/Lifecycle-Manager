@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Woo Lifecycle Manager with Tailwind CSS",
   "scripts": {
+    "clean": "rm -rf node_modules vendor pnpm-lock.yaml composer.lock",
     "build:css": "npx @tailwindcss/cli -i ./src/input.css -o ./admin/css/woo-lifecycle-manager-admin.css",
     "watch:css": "npx @tailwindcss/cli -i ./src/input.css -o ./admin/css/woo-lifecycle-manager-admin.css --watch"
   },

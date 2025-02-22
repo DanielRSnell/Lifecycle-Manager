@@ -57,11 +57,11 @@ class LifecycleController
             $context['order_id'] = $order_id;
             $context['order'] = $order;
 
-            // Add form data to context
+            // Add form data to context with proper ACF field group matching
             $context['form'] = [
                 'order_id' => $order_id,
                 'status_id' => $context['order_status'],
-                'field_group_id' => $this->getFieldGroupId($context['order_status'])
+                'field_group_id' => $this->findMatchingFieldGroup($context['order_status'])
             ];
 
             $template = $this->getTemplateForPartial($partial, $context['order_status']);
@@ -83,11 +83,30 @@ class LifecycleController
         return "{$partial}-{$status}.twig";
     }
 
-    private function getFieldGroupId($status)
+    private function findMatchingFieldGroup($status)
     {
-        // This is a placeholder. You should implement the logic to get the correct field group ID based on the status.
-        // For now, we'll return a dummy value.
-        return 'group_' . str_replace('wc-', '', $status);
+        if (!function_exists('acf_get_field_groups')) {
+            return null;
+        }
+
+        // Convert status to the expected ACF group name format
+        $status = str_replace('wc-', '', $status);
+        $status = str_replace('-', ' ', $status);
+        $status = ucwords($status);
+        $status = str_replace(' ', '', $status);
+
+        // Get all ACF field groups
+        $field_groups = acf_get_field_groups();
+        
+        // Find matching group
+        foreach ($field_groups as $group) {
+            $group_name = str_replace(' ', '', $group['title']);
+            if ($group_name === $status) {
+                return $group['key'];
+            }
+        }
+
+        return null;
     }
 
     public function updateLifecycle($data)

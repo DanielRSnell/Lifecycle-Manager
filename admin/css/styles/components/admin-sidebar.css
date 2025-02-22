@@ -1,0 +1,74 @@
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu,
+#adminmenu .wp-submenu {
+  background: var(--slate-50) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+#adminmenu a {
+  color: var(--slate-600) !important;
+}
+
+#adminmenu a:hover {
+  color: var(--slate-900) !important;
+}
+
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+  background: var(--white) !important;
+}
+
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li.current a.menu-top {
+  background: var(--white) !important;
+  color: var(--slate-900) !important;
+}
+
+/* Sizebar Items */
+
+#adminmenu .wp-submenu-head,
+#adminmenu a.menu-top {
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  opacity: 0.8;
+}
+
+#adminmenu div.wp-menu-image:before {
+  color: var(--slate-500) !important;
+}
+
+#adminmenu li.wp-has-current-submenu div.wp-menu-image:before,
+#adminmenu li.current div.wp-menu-image:before {
+  color: var(--slate-900) !important;
+}
+
+#adminmenu .wp-submenu {
+  background: var(--white) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border: 1px solid var(--border) !important;
+}
+
+#adminmenu .wp-submenu a {
+  color: var(--slate-600) !important;
+}
+
+#adminmenu .wp-submenu a:hover {
+  color: var(--slate-900) !important;
+  background: var(--slate-50) !important;
+}
+
+#collapse-button {
+  color: var(--slate-500) !important;
+}
+
+#collapse-button:hover {
+  color: var(--slate-900) !important;
+}
+
+#adminmenu .awaiting-mod,
+#adminmenu .update-plugins {
+  background: var(--slate-100) !important;
+  color: var(--slate-900) !important;
+}
