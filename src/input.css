@@ -1,4 +1,199 @@
 @import "tailwindcss";
 @import "../admin/css/styles/editor.css";
 
+:root {
+  --theme-background: #f9f9fb;
+  --theme-foreground: #17171b;
+  --theme-card: #ffffffbf;
+  --theme-card-foreground: #17171b;
+  --theme-popover: #ffffff;
+  --theme-popover-foreground: #17171b;
+  --theme-primary: #17171b;
+  --theme-primary-foreground: #f9f9f9;
+  --theme-secondary: #eeeef2bf;
+  --theme-secondary-foreground: #17171b;
+  --theme-muted: #f1f1f5;
+  --theme-muted-foreground: #71717a;
+  --theme-accent: #eeeef2e5;
+  --theme-accent-foreground: #17171b;
+  --theme-destructive: #ef4444;
+  --theme-destructive-foreground: #fef2f2;
+  --theme-border: #e5e5ec7f;
+  --theme-input: #f1f1f5;
+  --theme-ring: #27272a;
+}
+
 /* You can add any custom styles below this line */
+.acf-form-submit {
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  background: white;
+  left: 0;
+  z-index: 9999;
+}
+
+.acf-form-fields {
+  padding: 0 !important;
+  max-width: 88rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.repeater-tabs__number {
+  display: none !important;
+}
+
+.repeater-tabs__tab {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px 4px 0 0;
+  background: var(--theme-card);
+  border: 1px solid var(--theme-border);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.repeater-tabs__tab.is-active {
+  background: var(--theme-accent);
+  color: var(--theme-accent-foreground);
+  border-color: var(--theme-accent-foreground);
+  border-bottom-color: transparent;
+  position: relative;
+}
+
+/* Creates the appearance of the active tab being connected to the content below */
+.repeater-tabs__tab.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--theme-accent);
+}
+
+/* Optional hover state for better UX */
+.repeater-tabs__tab:hover:not(.is-active) {
+  background: var(--theme-muted);
+}
+
+.acf-field + .acf-tab-wrap.-left:before {
+  border: none !important;
+}
+
+.acf-fields.-sidebar:before {
+  background: transparent !important;
+}
+.acf-field + .acf-tab-wrap.-left:before {
+  background: transparent !important;
+}
+
+.status-indicator {
+  position: absolute;
+  top: -16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted-foreground);
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  opacity: 0.75;
+}
+
+.lc-header {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.lifecycle-header {
+  max-width: 88rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-dot.unchanged {
+  background-color: #94a3b8;
+}
+
+.status-dot.saving {
+  background-color: #3b82f6;
+  animation: pulse 1.5s infinite;
+}
+
+.status-dot.saved {
+  background-color: #22c55e;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+.umbral-exchange-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.umbral-exchange-section {
+  flex: 1;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.umbral-exchange-section h2 {
+  margin-top: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.snippet-selection {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.snippet-selection label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#umbral-exchange-messages {
+  margin-top: 2rem;
+}
+
+input[type="url"],
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+}

@@ -1,12 +1,12 @@
-<div id="lifecycle-wrapper" class="mt-4 bg-gray-100 border relative border-gray-300 rounded-lg shadow-md">
+<div id="lifecycle-wrapper" class="mt-4 h-[800px] bg-gray-100 border relative border-gray-300 rounded-lg shadow-md">
   <div class="status-indicator">
     <span class="status-dot unchanged"></span>
     <span class="status-text">Unchanged</span>
   </div>
-  <div class="flex flex-col gap-4 items-start justify-center pt-4">
-    <div class="text-xs font-bold absolute -top-2 left-1 rounded-md border-1 px-2 py-1 border-green-600 text-green-600 bg-green-100/70">{{ order_status|replace({ 'wc-': '', '-': ' ' })|capitalize }}</div>
-    <div class="flex w-full justify-center items-center pt-6 h-96 overflow-y-scroll">
-      <iframe src="/lifecycle?order_id={{ order_id }}&group_id={{ form.field_group_id }}" class="w-full h-full" frameborder="0"></iframe>
+  <div class="flex flex-col gap-4 items-start justify-center pt-4 h-full">
+    <div class="text-xs font-bold absolute -top-[16px] left-[16px] rounded-md border-1 px-2 py-1 border-green-600 text-green-600 bg-green-100/70 backdrop-blur-md">{{ order_status|replace({ 'wc-': '', '-': ' ' })|capitalize }}</div>
+    <div class="flex w-full justify-center items-center pt-4 h-full overflow-y-scroll">
+      <iframe src="/lifecycle?order_id={{ order_id }}&group_id={{ form.field_group_id }}&mode=full" class="w-full h-full" frameborder="0"></iframe>
     </div>
   </div>
   <script id="lifecycle-order-state" type="application/json">
@@ -17,8 +17,5 @@
       "total": "{{ order.get_formatted_order_total() }}",
       "date": "{{ order.get_date_created().date('Y-m-d H:i:s') }}"
     }
-  </script>
-  <script>
-    initAcfForms();
   </script>
 </div>

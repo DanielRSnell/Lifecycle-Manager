@@ -1,24 +1,47 @@
 <?php
+/**
+ * Handles routing for lifecycle pages and asset management
+ */
+
+/**
+ * Register the admin menu page for Lifecycle
+ */
+function wlm_register_admin_page()
+{
+    add_menu_page(
+        'Order Lifecycle',
+        'Lifecycle',
+        'manage_options',
+        'wlm-lifecycle',
+        'wlm_render_lifecycle_page',
+        'dashicons-update',
+        56
+    );
+}
+add_action('admin_menu', 'wlm_register_admin_page');
+
+/**
+ * Render the lifecycle admin page
+ */
+function wlm_render_lifecycle_page()
+{
+    // Include the order page template
+    include plugin_dir_path(__FILE__) . '/partials/order_page.php';
+}
+
+/**
+ * Handle the legacy frontend lifecycle template routing (can be removed later)
+ */
 function handle_lifecycle_template()
 {
-
     // Check if we're on the lifecycle endpoint
     if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/lifecycle') !== false) {
-        // Ensure we have required parameters
-        if (! isset($_GET['order_id']) || ! isset($_GET['group_id'])) {
-            wp_redirect(home_url());
-            exit;
-        }
-
-        // Check if user is logged in and not customer or subscriber
-        if (! is_user_logged_in() || current_user_can('customer') || current_user_can('subscriber')) {
-            // If they are redirect to 404
-            wp_redirect('/404');
-            exit;
-        }
-
-        // Load the template
-        include plugin_dir_path(__FILE__) . '/partials/order_page.php';
+        // Redirect to admin page with the same parameters
+        $redirect_url = add_query_arg(
+            $_GET,
+            admin_url('admin.php?page=wlm-lifecycle')
+        );
+        wp_redirect($redirect_url);
         exit;
     }
 }
