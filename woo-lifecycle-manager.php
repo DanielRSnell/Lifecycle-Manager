@@ -12,6 +12,12 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
+// Load Composer dependencies.
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Initialize Timber.
+Timber\Timber::init();
+
 // Define plugin constants
 define('WLM_VERSION', '1.0.0');
 define('WLM_PLUGIN_DIR', plugin_dir_path(__FILE__));
