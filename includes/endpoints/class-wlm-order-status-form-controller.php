@@ -9,7 +9,9 @@ class WLM_Order_Status_Form_Controller extends WLM_Base_Controller {
         register_rest_route('lifecycle/v1', '/order-status/form', array(
             'methods' => 'GET',
             'callback' => array($this, 'get_order_status_form'),
-            'permission_callback' => '__return_true',
+            'permission_callback' => function() {
+                return current_user_can('view_woocommerce_reports');
+            },
             'args' => array(
                 'order_id' => array(
                     'required' => true,
