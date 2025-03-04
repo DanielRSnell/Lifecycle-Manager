@@ -4,9 +4,9 @@ window.$ = window.jQuery;
 import OrderPage from './modules/OrderPage.js';
 import AjaxHandler from './modules/AjaxHandler.js';
 import LifecycleContainer from './modules/LifecycleContainer.js';
-import { initRepeaterTabs } from './modules/acf/repeater-tabs.js';
-import { initFlexibleManager } from './modules/acf/flexible-manager.js';
-import { initAcfForms } from './modules/acf/form-handler.js';
+// import { initRepeaterTabs } from './modules/acf/repeater-tabs.js';
+// import { initFlexibleManager } from './modules/acf/flexible-manager.js';
+// import { initAcfForms } from './modules/acf/form-handler.js';
 
 function initEditor() {
   // initRepeaterTabs();
