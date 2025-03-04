@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woo Lifecycle Manager
  * Description: Adds a lifecycle container to the WooCommerce order page using Timber and Twig.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Texas Metal Works
  * Text Domain: woo-lifecycle-manager
  * Domain Path: /languages
