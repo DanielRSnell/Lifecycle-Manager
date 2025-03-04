@@ -9,30 +9,31 @@ import { initFlexibleManager } from './modules/acf/flexible-manager.js';
 import { initAcfForms } from './modules/acf/form-handler.js';
 
 function initEditor() {
-  initRepeaterTabs();
-  initFlexibleManager();
+  // initRepeaterTabs();
+  // initFlexibleManager();
 
-  if (typeof window.acf !== 'undefined') {
-    window.acf.addAction('append', function($el) {
-      if ($el.hasClass('acf-row')) {
-        initRepeaterTabs();
-      }
-      initFlexibleManager();
-    });
+  // if (typeof window.acf !== 'undefined') {
+  //   window.acf.addAction('append', function($el) {
+  //     if ($el.hasClass('acf-row')) {
+  //       initRepeaterTabs();
+  //     }
+  //     initFlexibleManager();
+  //   });
 
-    window.acf.addAction('remove', function($el) {
-      if ($el.hasClass('acf-row')) {
-        initRepeaterTabs();
-      }
-      initFlexibleManager();
-    });
+  //   window.acf.addAction('remove', function($el) {
+  //     if ($el.hasClass('acf-row')) {
+  //       initRepeaterTabs();
+  //     }
+  //     initFlexibleManager();
+  //   });
 
-    window.acf.addAction('sortstop', function($el) {
-      if ($el.hasClass('values')) {
-        initFlexibleManager();
-      }
-    });
-  }
+  //   window.acf.addAction('sortstop', function($el) {
+  //     if ($el.hasClass('values')) {
+  //       initFlexibleManager();
+  //     }
+  //   });
+  // }
+  console.log('Editor Initialized');
 }
 
 window.$(function() {
