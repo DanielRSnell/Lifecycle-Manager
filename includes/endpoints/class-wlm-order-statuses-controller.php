@@ -10,7 +10,7 @@ class WLM_Order_Statuses_Controller extends WLM_Base_Controller {
             'methods' => 'GET',
             'callback' => array($this, 'get_order_statuses'),
             'permission_callback' => function() {
-                return current_user_can('view_woocommerce_reports');
+                return is_user_logged_in();
             },
         ));
     }

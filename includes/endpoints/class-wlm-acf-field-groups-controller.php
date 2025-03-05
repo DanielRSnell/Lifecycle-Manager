@@ -10,7 +10,7 @@ class WLM_ACF_Field_Groups_Controller extends WLM_Base_Controller {
             'methods' => 'GET',
             'callback' => array($this, 'get_acf_field_groups'),
             'permission_callback' => function() {
-                return current_user_can('view_woocommerce_reports');
+                return is_user_logged_in();
             },
         ));
     }

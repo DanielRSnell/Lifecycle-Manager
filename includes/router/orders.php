@@ -11,7 +11,7 @@ function wlm_register_admin_page()
     add_menu_page(
         'Order Lifecycle',
         'Lifecycle',
-        'view_woocommerce_reports',
+        'read',
         'wlm-lifecycle',
         'wlm_render_lifecycle_page',
         'dashicons-update',

@@ -55,7 +55,7 @@ class Woo_Lifecycle_Manager
     {
         check_ajax_referer('wlm_lifecycle_nonce', 'nonce');
 
-        if (!current_user_can('view_woocommerce_reports')) {
+        if (!is_user_logged_in()) {
             wp_send_json_error('Insufficient permissions');
             return;
         }
@@ -74,7 +74,7 @@ class Woo_Lifecycle_Manager
     {
         check_ajax_referer('wlm_lifecycle_nonce', 'nonce');
 
-        if (!current_user_can('view_woocommerce_reports')) {
+        if (!is_user_logged_in()) {
             wp_send_json_error('Insufficient permissions');
             return;
         }
